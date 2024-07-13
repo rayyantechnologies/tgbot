@@ -544,17 +544,14 @@
                     // }).catch(function (error) {
                     //     DemoApp.showAlert(`Error ${error}`);
                     // });
-                    fetch('https://jsonplaceholder.typicode.com/users', {
+                    fetch('https://rectest.requestcatcher.com/test', {
                       method: 'POST',
                       headers: {
                         'Content-Type': 'application/json',
                       },
-                      body: JSON.stringify({
-                        name: 'Nathan Sebhastian',
-                        email: 'ns@mail.com'
-                      }),
+                      body: JSON.stringify(Udata),
                     }).then(response => response.json())
-                      .then(data => DemoApp.showAlert(`${JSON.stringify(data)}`))
+                      .then(data => DemoApp.showAlert(`${data}`))
 
                     
                 }
