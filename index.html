@@ -554,7 +554,7 @@
                         email: 'ns@mail.com'
                       }),
                     }).then(response => response.json())
-                      .then(data => DemoApp.showAlert(`${data}`))
+                      .then(data => DemoApp.showAlert(`${JSON.stringify(data)}`))
 
                     
                 }
