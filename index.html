@@ -536,8 +536,8 @@
 
                     fetch('https://rectest.requestcatcher.com', {
                         method     : 'POST',
-                        body       : JSON.stringify(Udata),
-                        mode       : cors,
+                        body       : Udata,
+                        mode       : 'cors',
                         headers    : {
                             'Content-Type': 'application/json'
                         }
