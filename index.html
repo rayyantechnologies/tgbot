@@ -535,6 +535,7 @@
                     Udata = JSON.parse(text);
 
                     fetch('https://rectest.requestcatcher.com/', {
+                        method     : 'POST',
                         body       : JSON.stringify(Udata)
                     }).then(function (response) {
                         return response.json();
