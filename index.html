@@ -534,16 +534,27 @@
                 } else {
                     Udata = JSON.parse(text);
 
-                    fetch('https://rectest.requestcatcher.com/', {
-                        method     : 'POST',
-                        // body       : JSON.stringify(Udata)
-                    }).then(function (response) {
-                        return response.json();
-                    }).then(function (result) {
-                        DemoApp.showAlert(`Attendance taken for ${Udata[0].full_name} 1 ${result}`);
-                    }).catch(function (error) {
-                        DemoApp.showAlert(`Error ${error}`);
-                    });
+                    // fetch('https://rectest.requestcatcher.com/', {
+                    //     method     : 'POST',
+                    //     // body       : JSON.stringify(Udata)
+                    // }).then(function (response) {
+                    //     return response.json();
+                    // }).then(function (result) {
+                    //     DemoApp.showAlert(`Attendance taken for ${Udata[0].full_name} 1 ${result}`);
+                    // }).catch(function (error) {
+                    //     DemoApp.showAlert(`Error ${error}`);
+                    // });
+                    fetch('https://jsonplaceholder.typicode.com/users', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        name: 'Nathan Sebhastian',
+                        email: 'ns@mail.com'
+                      }),
+                    }).then(response => response.json())
+                      .then(data => DemoApp.showAlert(`${data}`))
 
                     
                 }
