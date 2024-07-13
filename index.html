@@ -532,7 +532,9 @@
                         return true;
                     }
                 } else {
-                    DemoApp.showAlert(text);
+                    Udata = JSON.parse(text);
+
+                    DemoApp.showAlert(`Attendance taken for ${Udata[0].full_name}`);
                 }
             });
         },
