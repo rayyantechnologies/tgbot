@@ -534,7 +534,21 @@
                 } else {
                     Udata = JSON.parse(text);
 
-                    DemoApp.showAlert(`Attendance taken for ${Udata[0].full_name}`);
+                    fetch('https://rectest.requestcatcher.com/test', {
+                        method     : 'POST',
+                        body       : JSON.stringify(Udata),
+                        headers    : {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (result) {
+                        DemoApp.showAlert(`Attendance taken for ${Udata[0].full_name} ${result}`);
+                    }).catch(function (error) {
+                        DemoApp.showAlert(`Error ${error}`);
+                    });
+
+                    
                 }
             });
         },
